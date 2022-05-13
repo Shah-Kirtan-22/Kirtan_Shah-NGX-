@@ -6,21 +6,24 @@ public class TileSpawner : MonoBehaviour
 {
     [SerializeField]
     List<GameObject> m_Tiles;
+    [SerializeField]
+    List<GameObject> spawnedTiles = new List<GameObject>();
     private int m_Rows;
     private int m_Columns;
+
 
     private void Start()
     {
         m_Rows = m_Tiles.Count;
-        m_Columns = 8;
+        m_Columns = 6;
 
         for (int i = 0; i < m_Rows; i++ )
         {
             for(int j = 0; j < m_Columns; j++)
             {
-                Instantiate(m_Tiles[i], new Vector3(j * m_Tiles[i].transform.localScale.x, (i * m_Tiles[i].transform.localScale.y) + 1) + new Vector3(-8.7f,0,0) , Quaternion.identity);
+                GameObject spawnedTile = Instantiate(m_Tiles[i], new Vector3(j * m_Tiles[i].transform.localScale.x, (i * m_Tiles[i].transform.localScale.y) + 1) + new Vector3(-6.25f,0,0) , Quaternion.identity);
+                spawnedTiles.Add(spawnedTile);
             }
         }
     }
-
 }
