@@ -17,7 +17,7 @@ public class BallController : MonoBehaviour
     public void SpawnBall()
     {
         transform.position = Vector3.zero; // initalize at (0,0,0), can be at any position 
-        this.GetComponent<Rigidbody2D>().velocity = Random.insideUnitCircle.normalized * speed; // randomly move the ball in any direction to begin the bounce effect 
+        this.GetComponent<Rigidbody2D>().velocity = Random.insideUnitCircle.normalized * speed; // randomly move the ball in any direction to begin the bounce effect   
     }
 
 }
