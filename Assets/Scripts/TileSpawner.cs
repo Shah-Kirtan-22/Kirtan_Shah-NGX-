@@ -18,7 +18,7 @@ public class TileSpawner : MonoBehaviour
         {
             for(int j = 0; j < m_Columns; j++)
             {
-                Instantiate(m_Tiles[i], new Vector3(j * m_Tiles[i].transform.localScale.x, (i * m_Tiles[i].transform.localScale.y) + 1) + new Vector3(-8.6f,0,0) , Quaternion.identity);
+                Instantiate(m_Tiles[i], new Vector3(j * m_Tiles[i].transform.localScale.x, (i * m_Tiles[i].transform.localScale.y) + 1) + new Vector3(-8.7f,0,0) , Quaternion.identity);
             }
         }
     }
