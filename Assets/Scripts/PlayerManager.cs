@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private float m_Speed; // the speed at which the board moves
     private Transform m_Player;
+    private float maxDistance = 7.6f;
 
     private void Start()
     {
@@ -28,10 +29,17 @@ public class PlayerManager : MonoBehaviour
 
     private void MoveLeft()
     {
-        
-        Vector3 nextPosition = m_Player.position;  // set the next position to be the current position (temp variable)
-        nextPosition.x -= m_Speed * Time.deltaTime;  // to move left subtract the speed in the x direction (subtract ~ -x on the scale) && delta time to keep it uniform
-        m_Player.position = nextPosition;
+        if(m_Player.position.x < -maxDistance)
+        {
+            m_Player.position = new Vector3(-maxDistance, m_Player.position.y, m_Player.position.z);
+        }
+        else
+        {
+            Vector3 nextPosition = m_Player.position;  // set the next position to be the current position (temp variable)
+            nextPosition.x -= m_Speed * Time.deltaTime;  // to move left subtract the speed in the x direction (subtract ~ -x on the scale) && delta time to keep it uniform
+            m_Player.position = nextPosition;
+
+        }
 
 
         //Debug.Log("Left arrow pressed");
@@ -40,10 +48,18 @@ public class PlayerManager : MonoBehaviour
     
     private void MoveRight()
     {
-        Vector3 nextPosition = m_Player.position;
-        nextPosition.x += m_Speed * Time.deltaTime;
-        m_Player.position = nextPosition; 
-     
+        if(m_Player.position.x > maxDistance)
+        {
+            m_Player.position = new Vector3(maxDistance, m_Player.position.y, m_Player.position.z);
+        }
+        else
+        {
+            Vector3 nextPosition = m_Player.position;
+            nextPosition.x += m_Speed * Time.deltaTime;
+            m_Player.position = nextPosition;
+
+        }
+
         //Debug.Log("Right arrow pressed");
     }
 }

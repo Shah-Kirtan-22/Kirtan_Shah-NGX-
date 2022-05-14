@@ -16,9 +16,9 @@ public class TileDestroy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        StartCoroutine(audioManager.PlayAudioClip(1));
-
         Destroy(this.gameObject);
+
+        StartCoroutine(audioManager.PlayAudioClip(1));
         destroyCount++;
         Debug.Log(destroyCount);
     }
