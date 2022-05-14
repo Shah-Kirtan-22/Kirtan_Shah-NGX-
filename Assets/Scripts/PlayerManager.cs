@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private float m_Speed; // the speed at which the board moves
     private Transform m_Player;
-    private float maxDistance = 7.6f;
+    private float maxDistance = 7.6f;  // the distance from the board to either walls
 
     private void Start()
     {
@@ -29,7 +29,7 @@ public class PlayerManager : MonoBehaviour
 
     private void MoveLeft()
     {
-        if(m_Player.position.x < -maxDistance)
+        if(m_Player.position.x < -maxDistance)  // check if the board is moved more than the screen width
         {
             m_Player.position = new Vector3(-maxDistance, m_Player.position.y, m_Player.position.z);
         }
@@ -38,12 +38,7 @@ public class PlayerManager : MonoBehaviour
             Vector3 nextPosition = m_Player.position;  // set the next position to be the current position (temp variable)
             nextPosition.x -= m_Speed * Time.deltaTime;  // to move left subtract the speed in the x direction (subtract ~ -x on the scale) && delta time to keep it uniform
             m_Player.position = nextPosition;
-
         }
-
-
-        //Debug.Log("Left arrow pressed");
-
     }
     
     private void MoveRight()
@@ -59,7 +54,5 @@ public class PlayerManager : MonoBehaviour
             m_Player.position = nextPosition;
 
         }
-
-        //Debug.Log("Right arrow pressed");
     }
 }

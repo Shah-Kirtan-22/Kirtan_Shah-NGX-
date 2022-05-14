@@ -5,7 +5,8 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
     [SerializeField]     
-    int speed = 7;
+    [Range(5,12)]
+    int speed = 7; // set the speed from the inspector
 
     void Start()
     {

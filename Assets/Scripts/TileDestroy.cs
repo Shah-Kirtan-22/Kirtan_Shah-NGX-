@@ -15,13 +15,13 @@ public class TileDestroy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        tileSpawner.spawnedTiles.RemoveAt(0);
-        Destroy(this.gameObject);
+        tileSpawner.spawnedTiles.RemoveAt(0);  // simply remove the element from the list || A more efficient method would be to check the tag or use raycast
+        Destroy(this.gameObject);  //  destroy the gameobject upon hit
     }
     
     private void FixedUpdate()
     {
-        if(tileSpawner.spawnedTiles.Count < 0)
+        if(tileSpawner.spawnedTiles.Count < 0)  // the count will go down to 0 if the player is successful in destroying all of the tiles
         {
             gameOver.GameOverUI();
         }
