@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class GameOver : MonoBehaviour
         if(ballTransform.position.y <= -10.0f && livesLeft.Count > 1)
         {
             StartCoroutine(audioManager.PlayAudioClip(2));
+
             ballTransform.gameObject.GetComponent<BallController>().SpawnBall();
             RemoveHeart();
         }
@@ -29,6 +31,7 @@ public class GameOver : MonoBehaviour
         else if(ballTransform.position.y <= -10.0f)
         {
             StartCoroutine(audioManager.PlayAudioClip(2));
+
             Time.timeScale = 0;
             gameOverUI.SetActive(true);
             RemoveHeart();
@@ -39,5 +42,17 @@ public class GameOver : MonoBehaviour
     {
         Destroy(livesLeft[0]);
         livesLeft.RemoveAt(0);
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("Breakout");
+        Time.timeScale = 1;
+        ballTransform.gameObject.GetComponent<BallController>().SpawnBall();
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
