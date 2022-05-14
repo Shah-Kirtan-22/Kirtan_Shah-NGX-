@@ -5,9 +5,8 @@ using UnityEngine;
 public class TileSpawner : MonoBehaviour
 {
     [SerializeField]
-    List<GameObject> m_Tiles;
-    [SerializeField]
-    List<GameObject> spawnedTiles = new List<GameObject>();
+    List<GameObject> m_Tiles;   // tiles prefab
+    public List<GameObject> spawnedTiles = new List<GameObject>();      // store the spawned  tiles
     private int m_Rows;
     private int m_Columns;
 

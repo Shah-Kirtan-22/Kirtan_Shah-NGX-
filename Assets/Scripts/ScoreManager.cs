@@ -7,9 +7,10 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public Text scoreText;
+    TileDestroy tileDestroy;
 
     private void Start()
     {
-        scoreText.text = "Hello";
+        scoreText.text += tileDestroy.destroyCount;
     }
 }
