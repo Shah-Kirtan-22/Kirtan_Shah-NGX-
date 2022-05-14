@@ -8,8 +8,7 @@ public class GameOver : MonoBehaviour
 {
     [SerializeField]
     private Transform ballTransform;
-    [SerializeField]
-    private List<GameObject> livesLeft;
+    public List<GameObject> livesLeft;
     public GameObject gameOverUI;
     AudioManager audioManager;
 
@@ -31,11 +30,15 @@ public class GameOver : MonoBehaviour
         else if(ballTransform.position.y <= -10.0f)
         {
             StartCoroutine(audioManager.PlayAudioClip(2));
-
-            Time.timeScale = 0;
-            gameOverUI.SetActive(true);
+            GameOverUI();
             RemoveHeart();
         }
+    }
+
+    public void GameOverUI()
+    {
+        Time.timeScale = 0;
+        gameOverUI.SetActive(true);
     }
 
     private void RemoveHeart()

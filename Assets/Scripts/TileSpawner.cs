@@ -11,7 +11,7 @@ public class TileSpawner : MonoBehaviour
     private int m_Columns;
 
 
-    private void Start()
+    private void Awake()
     {
         m_Rows = m_Tiles.Count;
         m_Columns = 6;
