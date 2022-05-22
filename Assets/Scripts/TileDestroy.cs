@@ -21,13 +21,4 @@ public class TileDestroy : MonoBehaviour
         Destroy(this.gameObject);  //  destroy the gameobject upon hit
         scoreManager.ScoreDisplay();
     }
-    
-    private void Update()
-    {
-        if(tileSpawner.spawnedTiles.Count <= 0)  // the count will go down to 0 if the player is successful in destroying all of the tiles
-        {
-            Debug.Log("All tiles destroyed");
-            gameOver.GameOverUI();
-        }
-    }
 }

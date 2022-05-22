@@ -10,6 +10,13 @@ public class TileSpawner : MonoBehaviour
     private int m_Rows;
     private int m_Columns;
 
+    GameOver gameOver;
+
+    private void Start()
+    {
+        gameOver = GetComponent<GameOver>();
+    }
+
 
     private void Awake()
     {
@@ -24,6 +31,14 @@ public class TileSpawner : MonoBehaviour
                 GameObject spawnedTile = Instantiate(m_Tiles[i], new Vector3(j * m_Tiles[i].transform.localScale.x, (i * m_Tiles[i].transform.localScale.y) + 1) + new Vector3(-6.25f,0,0) , Quaternion.identity);
                 spawnedTiles.Add(spawnedTile);
             }
+        }
+    }
+
+    private void Update()
+    {
+        if(spawnedTiles.Count <= 0)
+        {
+            gameOver.GameOverUI();
         }
     }
 }
