@@ -31,7 +31,6 @@ public class GameOver : MonoBehaviour
 
             ballTransform.gameObject.GetComponent<BallController>().SpawnBall();
             RemoveHeart();
-            scoreManager.ScoreDisplay();
         }
 
         else if(ballTransform.position.y <= -10.0f)

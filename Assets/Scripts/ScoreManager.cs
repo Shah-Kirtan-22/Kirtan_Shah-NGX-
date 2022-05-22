@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class ScoreManager : MonoBehaviour
 
     TileSpawner tileSpawner;
     GameOver gameOver;
+    public Text scoreText;
 
 
     private void Start()
@@ -18,13 +20,15 @@ public class ScoreManager : MonoBehaviour
         tileSpawner = GetComponent<TileSpawner>();
         gameOver = GetComponent<GameOver>();
 
+        scoreText = GameObject.Find("Score").GetComponent<Text>();
+
         tileCount = tileSpawner.spawnedTiles.Count;  // get an initial count
     }
 
-
     public void ScoreDisplay()
     {
-        finalScore = ((tileCount - tileSpawner.spawnedTiles.Count) * 10) + ((gameOver.livesLeft.Count) * 250);
-        Debug.Log(finalScore);
+        //finalScore = ((tileCount - tileSpawner.spawnedTiles.Count) * 10) + ((gameOver.livesLeft.Count) * 250);
+        finalScore = ((tileCount - tileSpawner.spawnedTiles.Count) * 10);
+        scoreText.text = "Score: " + finalScore.ToString();
     }
 }
