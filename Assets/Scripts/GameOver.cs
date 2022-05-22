@@ -11,10 +11,12 @@ public class GameOver : MonoBehaviour
     public List<GameObject> livesLeft;  // refers to the hearts/life the player has
     public GameObject gameOverUI; 
     AudioManager audioManager;
+    ScoreManager scoreManager;
 
     private void Start()
     {
         audioManager = GetComponent<AudioManager>();
+        scoreManager = GetComponent<ScoreManager>();
     }
 
     // In the update method, will check whether there are enough lives to go on and the ball is in the playing field
@@ -29,6 +31,7 @@ public class GameOver : MonoBehaviour
 
             ballTransform.gameObject.GetComponent<BallController>().SpawnBall();
             RemoveHeart();
+            scoreManager.ScoreDisplay();
         }
 
         else if(ballTransform.position.y <= -10.0f)

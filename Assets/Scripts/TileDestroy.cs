@@ -10,7 +10,7 @@ public class TileDestroy : MonoBehaviour
     private void Start()
     {
         tileSpawner = GameObject.FindGameObjectWithTag("GameManager").GetComponent<TileSpawner>();
-        gameOver = GameObject.FindGameObjectWithTag("GameManger").GetComponent<GameOver>();
+        gameOver = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameOver>();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
