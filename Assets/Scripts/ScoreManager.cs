@@ -11,6 +11,8 @@ public class ScoreManager : MonoBehaviour
     public int finalScore;
 
     TileSpawner tileSpawner;
+    TileDestroy tileDestroy;
+
     GameOver gameOver;
     public Text scoreText;
 
@@ -18,6 +20,7 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         tileSpawner = GetComponent<TileSpawner>();
+        tileDestroy = GameObject.FindObjectOfType<TileDestroy>();
         gameOver = GetComponent<GameOver>();
 
         scoreText = GameObject.Find("Score").GetComponent<Text>();
