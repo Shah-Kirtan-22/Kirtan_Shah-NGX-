@@ -1264,6 +1264,14 @@ MonoBehaviour:
   - {fileID: 587267176}
   - {fileID: 71636668}
   gameOverUI: {fileID: 1002811812}
+  levelName:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
 --- !u!114 &912971631
 MonoBehaviour:
   m_ObjectHideFlags: 0

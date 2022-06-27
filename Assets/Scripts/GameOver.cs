@@ -9,7 +9,7 @@ public class GameOver : MonoBehaviour
     [SerializeField]
     private Transform ballTransform;  // obtain the position of the ball
     public List<GameObject> livesLeft;  // refers to the hearts/life the player has
-    public GameObject gameOverUI; 
+    public GameObject gameOverUI;
     AudioManager audioManager;
     ScoreManager scoreManager;
 
@@ -65,7 +65,7 @@ public class GameOver : MonoBehaviour
     // This method resets the game to its original state
     public void RestartGame()
     {
-        SceneManager.LoadScene("Breakout");
+        SceneManager.LoadScene("One");  // always restart at the first level
         Time.timeScale = 1;
         ballTransform.gameObject.GetComponent<BallController>().SpawnBall();
     }
@@ -74,5 +74,12 @@ public class GameOver : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void LevelManager()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Time.timeScale = 1;
+        ballTransform.gameObject.GetComponent<BallController>().SpawnBall();
     }
 }

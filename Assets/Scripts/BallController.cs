@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BallController : MonoBehaviour
 {
     [SerializeField]     
-    [Range(5,12)]
-    int speed = 7; // set the speed from the inspector
+    [Range(6,15)]
+    int speed = 6; // set the speed from the inspector
 
     void Start()
     {
+        speed = speed + SceneManager.GetActiveScene().buildIndex;
         SpawnBall();
     }
 

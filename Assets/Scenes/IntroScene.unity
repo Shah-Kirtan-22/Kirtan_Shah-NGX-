@@ -866,6 +866,7 @@ MonoBehaviour:
   ballTransform: {fileID: 0}
   livesLeft: []
   gameOverUI: {fileID: 0}
+  levelName: []
 --- !u!1 &1886829290
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,7 +952,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1686932109}
         m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
-        m_MethodName: RestartGame
+        m_MethodName: LevelManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
