@@ -20,7 +20,7 @@ public class TileDestroy : MonoBehaviour
         gameOver = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameOver>();
 
         hitCount = 0;
-        destroyHit = SceneManager.GetActiveScene().buildIndex;
+        destroyHit = SceneManager.GetActiveScene().buildIndex;  // change according to the level (level 2 = 2 hits)
     }
 
     private void OnCollisionEnter2D(Collision2D other)
