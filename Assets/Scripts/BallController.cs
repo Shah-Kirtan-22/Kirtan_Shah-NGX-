@@ -11,7 +11,7 @@ public class BallController : MonoBehaviour
 
     void Start()
     {
-        speed = speed + SceneManager.GetActiveScene().buildIndex;
+        speed = SceneManager.GetActiveScene().buildIndex + 6;
         SpawnBall();
     }
 

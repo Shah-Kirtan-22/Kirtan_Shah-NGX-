@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
     [SerializeField]
+    [Range(7,20)]
     private float m_Speed; // the speed at which the board moves
     private Transform m_Player;
     private float maxDistance = 7.6f;  // the distance from the board to either walls
 
     private void Start()
     {
+        m_Speed = SceneManager.GetActiveScene().buildIndex + 10;
         m_Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();  // get the transform of the player
     }
 

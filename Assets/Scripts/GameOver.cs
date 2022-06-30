@@ -13,6 +13,9 @@ public class GameOver : MonoBehaviour
     AudioManager audioManager;
     ScoreManager scoreManager;
 
+    [SerializeField]
+    ScriptableValues scriptableValues;
+
     private void Start()
     {
         audioManager = GetComponent<AudioManager>();
@@ -51,6 +54,7 @@ public class GameOver : MonoBehaviour
     public void GameOverUI()  
     {
         Time.timeScale = 0;
+        gameOverUI.GetComponentInChildren<Text>().text = "Game Over \n" + "Your Score: " + (scoreManager.finalScore + (int)Time.time);
         gameOverUI.SetActive(true);
     }
 
@@ -59,6 +63,8 @@ public class GameOver : MonoBehaviour
     {
         Destroy(livesLeft[0]);
         livesLeft.RemoveAt(0);
+        
+        scriptableValues.livesLeft = livesLeft.Count;
     }
 
     // The restartgame method is called when starting the game
@@ -78,8 +84,15 @@ public class GameOver : MonoBehaviour
 
     public void LevelManager()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        Time.timeScale = 1;
-        ballTransform.gameObject.GetComponent<BallController>().SpawnBall();
+        if(SceneManager.GetActiveScene().buildIndex <= SceneManager.sceneCount)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Time.timeScale = 1;
+            ballTransform.gameObject.GetComponent<BallController>().SpawnBall();
+        }
+        else
+        {
+            GameOverUI();
+        }
     }
 }

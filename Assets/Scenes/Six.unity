@@ -1264,14 +1264,7 @@ MonoBehaviour:
   - {fileID: 587267176}
   - {fileID: 71636668}
   gameOverUI: {fileID: 1002811812}
-  levelName:
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
-  - 6
-  - 7
+  scriptableValues: {fileID: 11400000, guid: 2547b1498f587a3469321ab6400febaf, type: 2}
 --- !u!114 &912971631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1287,6 +1280,7 @@ MonoBehaviour:
   tileCount: 0
   finalScore: 0
   scoreText: {fileID: 1182519075}
+  scriptableValues: {fileID: 11400000, guid: 2547b1498f587a3469321ab6400febaf, type: 2}
 --- !u!114 &912971632
 MonoBehaviour:
   m_ObjectHideFlags: 0

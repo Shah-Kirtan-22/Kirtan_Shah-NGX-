@@ -132,7 +132,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3402125}
-  - component: {fileID: 3402126}
   m_Layer: 0
   m_Name: Lives
   m_TagString: Untagged
@@ -157,18 +156,6 @@ Transform:
   m_Father: {fileID: 889061873}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3402126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3402124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bfb81ab54a07344484f602dac924f51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &71636668 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3015250706086950155, guid: 5e15dd28506f8154aa06a4829bde51bb, type: 3}
@@ -1277,6 +1264,7 @@ MonoBehaviour:
   - {fileID: 587267176}
   - {fileID: 71636668}
   gameOverUI: {fileID: 1002811812}
+  scriptableValues: {fileID: 11400000, guid: 2547b1498f587a3469321ab6400febaf, type: 2}
 --- !u!114 &912971631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1292,6 +1280,7 @@ MonoBehaviour:
   tileCount: 0
   finalScore: 0
   scoreText: {fileID: 1182519075}
+  scriptableValues: {fileID: 11400000, guid: 2547b1498f587a3469321ab6400febaf, type: 2}
 --- !u!114 &912971632
 MonoBehaviour:
   m_ObjectHideFlags: 0

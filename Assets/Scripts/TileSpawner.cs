@@ -12,16 +12,10 @@ public class TileSpawner : MonoBehaviour
 
     GameOver gameOver;
 
-    private void Start()
-    {
-        gameOver = GetComponent<GameOver>();
-    }
-
-
     private void Awake()
     {
         m_Rows = m_Tiles.Count;
-        m_Columns = 1;  // combination of tiles (x-value) and screen width || A more efficient method would be to use Screen.Width
+        m_Columns = 6;  // combination of tiles (x-value) and screen width || A more efficient method would be to use Screen.Width
 
         for (int i = 0; i < m_Rows; i++ )
         {
@@ -32,6 +26,11 @@ public class TileSpawner : MonoBehaviour
                 spawnedTiles.Add(spawnedTile);
             }
         }
+    }
+
+    private void Start()
+    {
+        gameOver = GetComponent<GameOver>();
     }
 
     private void Update()
